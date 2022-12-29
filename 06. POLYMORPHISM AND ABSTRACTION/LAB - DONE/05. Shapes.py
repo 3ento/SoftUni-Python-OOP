@@ -1,0 +1,37 @@
+from abc import ABC, abstractmethod
+import math
+
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
+
+    @abstractmethod
+    def calculate_perimeter(self):
+        pass
+
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def calculate_perimeter(self):
+        return 2 * math.pi * self.radius
+
+    def calculate_area(self):
+        return math.pi * math.pow(self.radius, 2)
+
+
+class Rectangle(Shape):
+    def __init__(self, h, w):
+        self.h = h
+        self.w = w
+
+    def calculate_perimeter(self):
+        return (self.h + self.w) * 2
+
+    def calculate_area(self):
+        return self.h * self.w
+
+# 66/100
+# 100/100
